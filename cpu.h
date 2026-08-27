@@ -34,6 +34,9 @@ typedef struct {
             uint8_t dl, dh;
         };
     };
+
+    uint16_t si, di, bp, sp, ip, cs, ds, ss, es;
+
 } Registers8086;
 
 
