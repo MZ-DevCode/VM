@@ -28,8 +28,8 @@ SDL_AppResult SDL_AppIterate(void* appstate) {
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
 	SDL_RenderClear(renderer);
 
-	if(mainui.Button("Close App", font, renderer,
-		10, 10, 200, 50,
+	if(mainui.Button("Start", font, renderer,
+		590, 540, 200, 50,
 		{ 255, 255, 255, 255 },
 		{ 200, 200, 200, 255 },
 		{ 150, 150, 150, 255 }
@@ -50,5 +50,5 @@ SDL_AppResult SDL_AppEvent(void* appstate, SDL_Event* event) {
 
 
 void SDL_AppQuit(void* appstate, SDL_AppResult result) {
-
+	
 }

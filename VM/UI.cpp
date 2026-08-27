@@ -31,7 +31,7 @@ bool UI::Button(std::string text, TTF_Font* font, SDL_Renderer* renderer, float 
 		(float)createText->h
 	};
 	SDL_DestroySurface(createText);
-
+	
 	float mouseX, mouseY;
 	SDL_MouseButtonFlags buttons =
 		SDL_GetMouseState(&mouseX, &mouseY);
@@ -52,7 +52,7 @@ bool UI::Button(std::string text, TTF_Font* font, SDL_Renderer* renderer, float 
 	}
 	SDL_RenderFillRect(renderer, &buttonRect);
 	SDL_RenderTexture(renderer, textTexture, NULL, &textRect);
+	SDL_DestroyTexture(textTexture);
 	wasPressed = pressed;
-
 	return clicked;
 }
