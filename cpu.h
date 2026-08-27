@@ -34,7 +34,7 @@ typedef struct {
             uint8_t dl, dh;
         };
     };
-} Redisters8086;
+} Registers8086;
 
 
 /*
