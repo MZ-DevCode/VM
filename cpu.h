@@ -7,7 +7,33 @@
 
 // структура регистров процессора
 typedef struct {
+    union {
+        uint16_t ax;
+        struct{
+            uint8_t al, ah;
+        };
+    };
 
+     union {
+        uint16_t bx;
+        struct{
+            uint8_t bl, bh;
+        };
+    };
+
+     union {
+        uint16_t cx;
+        struct{
+            uint8_t cl, ch;
+        };
+    };
+
+     union {
+        uint16_t dx;
+        struct{
+            uint8_t dl, dh;
+        };
+    };
 } Redisters8086;
 
 
