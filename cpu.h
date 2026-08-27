@@ -70,3 +70,11 @@ typedef struct {
 
 */
 
+
+// структура эмулятора
+typedef struct{
+	uint8_t memory[1024 * 1024]; // 1мб памяти (1 048 576 байт)
+	Registers8086 cpu; // процессор
+	bool running; // состояние
+
+} Emulator8086;
