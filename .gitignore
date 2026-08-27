@@ -1,29 +1,30 @@
-# Go binaries
-/my-vm
+# Скомпилированные файлы и бинарники (и для Linux, и для Windows)
 *.exe
-*.exe~
 *.dll
 *.so
 *.dylib
+*.out
+*.o
+vm
+chip8
 
-# Dependency directories
-/vendor
+# Visual Studio / MSBuild
+.vs/
+x64/
+Debug/
+Release/
+*.user
+*.suo
+*.opensdf
+*.sdf
 
-# Go workspace file
-go.work
-
-# IDEs and Editors
+# IDE и редакторы
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 
-# OS generated files
+# Системные файлы
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
