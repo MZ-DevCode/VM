@@ -10,7 +10,7 @@ typedef struct {
     union {
         uint16_t ax;
         struct{
-            uint8_t al, ah;Ра
+            uint8_t al, ah;
         };
     };
 
