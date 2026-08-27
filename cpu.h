@@ -78,3 +78,7 @@ typedef struct{
 	bool running; // состояние
 
 } Emulator8086;
+
+void cpu_init(Emulator8086 *memory) // обнуление памяти
+
+#endif
