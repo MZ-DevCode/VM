@@ -1,6 +1,6 @@
 #include "UI.h"
-#include <SDL3_ttf/SDL_ttf.h>
 #include <iostream>
+
 SDL_FPoint UI::mousePos(){
 	float x, y;
 	SDL_GetMouseState(&x, &y);
@@ -16,12 +16,20 @@ bool UI::isHover(SDL_FRect rect) {
 }
 
 bool UI::Button(std::string text, TTF_Font* font, SDL_Renderer* renderer, float x, float y, float w, float h,
-			SDL_Color BaseColor, SDL_Color SelectColor, SDL_Color PressColor) {
+	SDL_Color BaseColor, SDL_Color SelectColor, SDL_Color PressColor) {
+
 	SDL_SetRenderDrawColor(renderer, BaseColor.r, BaseColor.g, BaseColor.b, BaseColor.a);
 	SDL_FRect buttonRect{x, y, w, h};
 
-	SDL_Surface* createText = TTF_RenderText_Solid(font, text.c_str(), strlen(text.c_str()), { 0,0,0,255 });
+	SDL_Surface* createText =
+		TTF_RenderText_Solid(font, text.c_str(), 0, { 0, 0, 0, 255 });
 	SDL_Texture* textTexture = SDL_CreateTextureFromSurface(renderer, createText);
+	SDL_FRect textRect{
+		x + (w - createText->w) / 2.0f,
+		y + (h - createText->h) / 2.0f,
+		(float)createText->w,
+		(float)createText->h
+	};
 	SDL_DestroySurface(createText);
 
 	float mouseX, mouseY;
@@ -43,6 +51,7 @@ bool UI::Button(std::string text, TTF_Font* font, SDL_Renderer* renderer, float 
 		}
 	}
 	SDL_RenderFillRect(renderer, &buttonRect);
+	SDL_RenderTexture(renderer, textTexture, NULL, &textRect);
 	wasPressed = pressed;
 
 	return clicked;

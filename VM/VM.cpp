@@ -9,7 +9,7 @@
 SDL_Window* window;
 SDL_Renderer* renderer;
 
-TTF_Font* font = TTF_OpenFont("fonts/Roboto-Regular.tff", 10);
+TTF_Font* font;;
 
 UI mainui;
 
@@ -18,6 +18,7 @@ SDL_AppResult SDL_AppInit(void** appstate, int argc, char* argv[]) {
 	SDL_Init(SDL_INIT_VIDEO);
 	TTF_Init();
 
+	font = TTF_OpenFont("font/Roboto-Regular.ttf", 20);
 
 	SDL_CreateWindowAndRenderer("VM", 800, 600, SDL_WINDOW_TRANSPARENT, &window, &renderer);
 	return SDL_APP_CONTINUE;
@@ -27,8 +28,8 @@ SDL_AppResult SDL_AppIterate(void* appstate) {
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
 	SDL_RenderClear(renderer);
 
-	if(mainui.Button("Button", renderer,
-		10, 10, 100, 50,
+	if(mainui.Button("Close App", font, renderer,
+		10, 10, 200, 50,
 		{ 255, 255, 255, 255 },
 		{ 200, 200, 200, 255 },
 		{ 150, 150, 150, 255 }
