@@ -10,7 +10,7 @@ typedef struct {
     union {
         uint16_t ax;
         struct{
-            uint8_t al, ah;
+            uint8_t al, ah;Ра
         };
     };
 
@@ -34,6 +34,9 @@ typedef struct {
             uint8_t dl, dh;
         };
     };
+
+    uint16_t si, di, bp, sp, ip, cs, ds, ss, es;
+
 } Registers8086;
 
 
