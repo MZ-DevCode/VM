@@ -18,12 +18,12 @@
     <ClCompile Include="VM.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\MyToolbox\ToolboxByArti\MyToolbox\UI.cpp">
+    <ClCompile Include="UI.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\MyToolbox\ToolboxByArti\MyToolbox\UI.h">
+    <ClInclude Include="UI.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

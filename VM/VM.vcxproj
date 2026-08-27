@@ -143,11 +143,11 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\MyToolbox\ToolboxByArti\MyToolbox\UI.cpp" />
+    <ClCompile Include="UI.cpp" />
     <ClCompile Include="VM.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\MyToolbox\ToolboxByArti\MyToolbox\UI.h" />
+    <ClInclude Include="UI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
