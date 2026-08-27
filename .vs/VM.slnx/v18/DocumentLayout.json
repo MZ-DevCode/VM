@@ -5,6 +5,12 @@
     {
       "AbsoluteMoniker": "D:0:0:{5A000473-439E-45BE-8E0A-C8A97E7CCB0C}|VM\\VM.vcxproj|C:\\Users\\User\\Desktop\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\VM\\VM\\VM.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5A000473-439E-45BE-8E0A-C8A97E7CCB0C}|VM\\VM.vcxproj|solutionrelative:VM\\VM.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A000473-439E-45BE-8E0A-C8A97E7CCB0C}|VM\\VM.vcxproj|C:\\Users\\User\\Desktop\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\MyToolbox\\ToolboxByArti\\MyToolbox\\UI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A000473-439E-45BE-8E0A-C8A97E7CCB0C}|VM\\VM.vcxproj|C:\\Users\\User\\Desktop\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\MyToolbox\\ToolboxByArti\\MyToolbox\\UI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +20,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UI.cpp",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\MyToolbox\\ToolboxByArti\\MyToolbox\\UI.cpp",
+              "RelativeDocumentMoniker": "..\\MyToolbox\\ToolboxByArti\\MyToolbox\\UI.cpp",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\MyToolbox\\ToolboxByArti\\MyToolbox\\UI.cpp",
+              "RelativeToolTip": "..\\MyToolbox\\ToolboxByArti\\MyToolbox\\UI.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-08-27T09:45:50.056Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{c6f34f0d-7ae5-4f3a-be61-fe0c21ae9eb8}"
@@ -26,13 +45,26 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UI.h",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\MyToolbox\\ToolboxByArti\\MyToolbox\\UI.h",
+              "RelativeDocumentMoniker": "..\\MyToolbox\\ToolboxByArti\\MyToolbox\\UI.h",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\MyToolbox\\ToolboxByArti\\MyToolbox\\UI.h",
+              "RelativeToolTip": "..\\MyToolbox\\ToolboxByArti\\MyToolbox\\UI.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-08-27T09:45:46.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "VM.cpp",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\VM\\VM\\VM.cpp",
               "RelativeDocumentMoniker": "VM\\VM.cpp",
               "ToolTip": "C:\\Users\\User\\Desktop\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\VM\\VM\\VM.cpp",
               "RelativeToolTip": "VM\\VM.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-08-27T09:10:58.331Z",
               "EditorCaption": ""
