@@ -1,6 +1,6 @@
-﻿  UI.cpp
+﻿  VM.cpp
   Создание кода
   Compiler switch has changed, fall back to full compilation.
-  All 19 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  All 76 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Создание кода завершено
   VM.vcxproj -> C:\Users\User\Desktop\Проекты\VM\x64\Release\VM.exe

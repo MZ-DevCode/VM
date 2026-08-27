@@ -1,4 +1,5 @@
 #include "UI.h"
+#include <SDL3_ttf/SDL_ttf.h>
 #include <iostream>
 SDL_FPoint UI::mousePos(){
 	float x, y;
@@ -14,10 +15,14 @@ bool UI::isHover(SDL_FRect rect) {
 		mousePos().y <= rect.y + rect.h;
 }
 
-bool UI::Button(float x, float y, float w, float h,
+bool UI::Button(std::string text, TTF_Font* font, SDL_Renderer* renderer, float x, float y, float w, float h,
 			SDL_Color BaseColor, SDL_Color SelectColor, SDL_Color PressColor) {
-	SDL_SetRenderDrawColor(SDL_GetRenderer(0), BaseColor.r, BaseColor.g, BaseColor.b, BaseColor.a);
+	SDL_SetRenderDrawColor(renderer, BaseColor.r, BaseColor.g, BaseColor.b, BaseColor.a);
 	SDL_FRect buttonRect{x, y, w, h};
+
+	SDL_Surface* createText = TTF_RenderText_Solid(font, text.c_str(), strlen(text.c_str()), { 0,0,0,255 });
+	SDL_Texture* textTexture = SDL_CreateTextureFromSurface(renderer, createText);
+	SDL_DestroySurface(createText);
 
 	float mouseX, mouseY;
 	SDL_MouseButtonFlags buttons =
@@ -28,18 +33,17 @@ bool UI::Button(float x, float y, float w, float h,
 	bool clicked = false;
 
 	if (isHover(buttonRect)) {
-		SDL_SetRenderDrawColor(SDL_GetRenderer(0), SelectColor.r, SelectColor.g, SelectColor.b, SelectColor.a);
+		SDL_SetRenderDrawColor(renderer, SelectColor.r, SelectColor.g, SelectColor.b, SelectColor.a);
 		if (pressed) {
-			SDL_SetRenderDrawColor(SDL_GetRenderer(0), PressColor.r, PressColor.g, PressColor.b, PressColor.a);
+			SDL_SetRenderDrawColor(renderer, PressColor.r, PressColor.g, PressColor.b, PressColor.a);
 			if (!wasPressed)
 			{
 				clicked = true;
 			}
 		}
 	}
-	clicked = false;
+	SDL_RenderFillRect(renderer, &buttonRect);
 	wasPressed = pressed;
 
-	SDL_RenderFillRect(SDL_GetRenderer(0), &buttonRect);
 	return clicked;
 }
