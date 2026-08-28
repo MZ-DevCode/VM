@@ -1,0 +1,50 @@
+# Скомпилированные файлы и бинарники (и для Linux, и для Windows)
+*.exe
+*.dll
+*.so
+*.dylib
+*.out
+*.o
+vm
+chip8
+
+# Visual Studio / MSBuild
+.vs/
+x64/
+Debug/
+Release/
+*.user
+*.suo
+*.opensdf
+*.sdf
+
+# IDE и редакторы
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+
+# Сборочные директории и бинарники
+build/
+bin/
+x64/
+VM/
+
+# Идеи и редакторы
+.vscode/
+.idea/
+*.slnx
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+
+# Временные файлы компиляции
+*.o
+*.obj
+*.exe
+*.pdb
