@@ -82,7 +82,6 @@ typedef struct{
 void cpu_init(Emulator8086 *emu); // обнуление памяти
 void cpu_step(Emulator8086 *emu); //выполение одной инструкции
 
-
 uint8_t cpu_read_byte(Emulator8086 *emu, uint32_t physical_address); // чтение одного байта из памяти эмулятора
 void cpu_write_byte(Emulator8086 *emu, uint32_t physical_address, uint8_t val); // запись одного байта в память эмулятора
 
