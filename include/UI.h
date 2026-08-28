@@ -6,9 +6,16 @@ class UI
 {
 public:
 	SDL_FPoint mousePos();
-	bool Button(std::string text, TTF_Font* font, SDL_Renderer* renderer, float x, float y, float w, float h,
-				SDL_Color BaseColor, SDL_Color SelectColor, SDL_Color PressColor);
 	bool isHover(SDL_FRect rect);
+
+	bool Button(std::string text, TTF_Font* font, SDL_Color TextColor, SDL_Renderer* renderer,
+		float x, float y, float w, float h,
+		SDL_Color BaseColor, SDL_Color SelectColor, SDL_Color PressColor);
+
+	void Text(std::string text, TTF_Font* font, SDL_Renderer* renderer,
+		float x, float y,
+		SDL_Color TextColor,
+		bool haveShadows = true, float shadowPosX = 3, float shadowPosY = 3);
 private:
 };
 

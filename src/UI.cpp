@@ -1,11 +1,11 @@
 #include "UI.h"
 #include <iostream>
 
-SDL_FPoint UI::mousePos(){
+SDL_FPoint UI::mousePos() {
 	float x, y;
 	SDL_GetMouseState(&x, &y);
 
-	return SDL_FPoint{x,y};
+	return SDL_FPoint{ x,y };
 };
 
 bool UI::isHover(SDL_FRect rect) {
@@ -15,14 +15,16 @@ bool UI::isHover(SDL_FRect rect) {
 		mousePos().y <= rect.y + rect.h;
 }
 
-bool UI::Button(std::string text, TTF_Font* font, SDL_Renderer* renderer, float x, float y, float w, float h,
+bool UI::Button(std::string text, TTF_Font* font, SDL_Color TextColor,
+	SDL_Renderer* renderer,
+	float x, float y, float w, float h,
 	SDL_Color BaseColor, SDL_Color SelectColor, SDL_Color PressColor) {
 
 	SDL_SetRenderDrawColor(renderer, BaseColor.r, BaseColor.g, BaseColor.b, BaseColor.a);
-	SDL_FRect buttonRect{x, y, w, h};
+	SDL_FRect buttonRect{ x, y, w, h };
 
 	SDL_Surface* createText =
-		TTF_RenderText_Solid(font, text.c_str(), 0, { 0, 0, 0, 255 });
+		TTF_RenderText_Solid(font, text.c_str(), 0, TextColor);
 	SDL_Texture* textTexture = SDL_CreateTextureFromSurface(renderer, createText);
 	SDL_FRect textRect{
 		x + (w - createText->w) / 2.0f,
@@ -31,7 +33,7 @@ bool UI::Button(std::string text, TTF_Font* font, SDL_Renderer* renderer, float 
 		(float)createText->h
 	};
 	SDL_DestroySurface(createText);
-	
+
 	float mouseX, mouseY;
 	SDL_MouseButtonFlags buttons =
 		SDL_GetMouseState(&mouseX, &mouseY);
@@ -55,4 +57,31 @@ bool UI::Button(std::string text, TTF_Font* font, SDL_Renderer* renderer, float 
 	SDL_DestroyTexture(textTexture);
 	wasPressed = pressed;
 	return clicked;
+}
+
+void UI::Text(std::string text, TTF_Font* font, SDL_Renderer* renderer, float x, float y, SDL_Color TextColor, bool haveShadows, float shadowPosX, float shadowPosY) {
+
+	SDL_Surface* createText =
+		TTF_RenderText_Solid(font, text.c_str(), 0, TextColor);
+	SDL_Texture* textTexture = SDL_CreateTextureFromSurface(renderer, createText);
+	SDL_FRect textRect{
+		x,
+		y,
+		(float)createText->w,
+		(float)createText->h
+	};
+	SDL_DestroySurface(createText);
+
+	if (haveShadows) {
+		textRect.x += shadowPosX;
+		textRect.y += shadowPosY;
+		SDL_SetTextureColorMod(textTexture, 0, 0, 0);
+		SDL_RenderTexture(renderer, textTexture, NULL, &textRect);
+		SDL_SetTextureColorMod(textTexture, TextColor.r, TextColor.g, TextColor.b);
+		textRect.x -= shadowPosX;
+		textRect.y -= shadowPosY;
+	}
+	SDL_RenderTexture(renderer, textTexture, NULL, &textRect);
+
+	SDL_DestroyTexture(textTexture);
 }
