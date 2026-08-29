@@ -16,5 +16,5 @@ uint8_t cpu_read_byte(Emulator8086 *emu, uint32_t physical_address){
 };
 
 void cpu_write_byte(Emulator8086 *emu, uint32_t physical_address, uint8_t val){
-
+	emu->memory[physical_address & 0xFFFFF] = val;
 };
