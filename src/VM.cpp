@@ -9,10 +9,7 @@
 SDL_Window* window;
 SDL_Renderer* renderer;
 
-TTF_Font* font;;
-
-UI mainui;
-
+TTF_Font* font;
 
 SDL_AppResult SDL_AppInit(void** appstate, int argc, char* argv[]) {
 	SDL_Init(SDL_INIT_VIDEO);
@@ -28,11 +25,14 @@ SDL_AppResult SDL_AppIterate(void* appstate) {
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
 	SDL_RenderClear(renderer);
 
-	if(mainui.Button("Start", font, renderer,
-		590, 540, 200, 50,
-		{ 255, 255, 255, 255 },
-		{ 200, 200, 200, 255 },
-		{ 150, 150, 150, 255 }
+	Text(0, "TextTest", font, renderer, 13, 13, { 255, 255, 255, 255 });
+
+	if (Button(0, "Start", font, { 0, 0, 0, 255 },         // text settings
+		renderer,                                          // renderer
+		590, 540, 200, 50,                                 // x, y, h, w
+		{ 255, 255, 255, 255 },                            // BaseColor
+		{ 200, 200, 200, 255 },                            // SelectColor
+		{ 150, 150, 150, 255 }                             // PressColor
 	))
 		return SDL_APP_SUCCESS;
 
@@ -47,8 +47,9 @@ SDL_AppResult SDL_AppEvent(void* appstate, SDL_Event* event) {
 	return SDL_APP_CONTINUE;
 }
 
-
-
 void SDL_AppQuit(void* appstate, SDL_AppResult result) {
-	
+	SDL_DestroyWindow(window);
+	SDL_DestroyRenderer(renderer);
+
+	TTF_CloseFont(font);
 }
