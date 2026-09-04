@@ -23,8 +23,10 @@ bool Button(int id, std::string text, TTF_Font* font, SDL_Color TextColor,
 	SDL_SetRenderDrawColor(renderer, BaseColor.r, BaseColor.g, BaseColor.b, BaseColor.a);
 	SDL_FRect buttonRect{ x, y, w, h };
 
-	static SDL_Texture* textures[2]{};
-	static std::string oldText[2];
+	static SDL_Texture* textures[10]{};
+	static std::string oldText[10];
+	static bool wasPressed[10]{};
+	if (id < 0 || id >= 10) return false;
 	if (textures[id] == nullptr || oldText[id] != text)
 	{
 		SDL_Surface* surface =
@@ -63,14 +65,15 @@ bool Button(int id, std::string text, TTF_Font* font, SDL_Color TextColor,
 	SDL_RenderFillRect(renderer, &buttonRect);
 	SDL_RenderTexture(renderer, textures[id], NULL, &textRect);
 
-	wasPressed = pressed;
+	wasPressed[id] = pressed;
 	return clicked;
 }
 
 void Text(int id, std::string text, TTF_Font* font, SDL_Renderer* renderer, float x, float y, SDL_Color TextColor, bool haveShadows, float shadowPosX, float shadowPosY) {
 
-	static SDL_Texture* textures[2]{};
-	static std::string oldText[2];
+	static SDL_Texture* textures[10]{};
+	static std::string oldText[10];
+	if(id < 0 || id >=10) return;
 
 
 	if (textures[id] == nullptr || oldText[id] != text)

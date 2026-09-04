@@ -15,7 +15,7 @@ SDL_AppResult SDL_AppInit(void** appstate, int argc, char* argv[]) {
 	SDL_Init(SDL_INIT_VIDEO);
 	TTF_Init();
 
-	font = TTF_OpenFont("font/Roboto-Regular.ttf", 20);
+	font = TTF_OpenFont("assets/Roboto-Regular.ttf", 20);
 
 	SDL_CreateWindowAndRenderer("VM", 800, 600, SDL_WINDOW_TRANSPARENT, &window, &renderer);
 	return SDL_APP_CONTINUE;
