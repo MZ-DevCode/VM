@@ -18,3 +18,17 @@ uint8_t cpu_read_byte(Emulator8086 *emu, uint32_t physical_address){
 void cpu_write_byte(Emulator8086 *emu, uint32_t physical_address, uint8_t val){
 	emu->memory[physical_address & 0xFFFFF] = val;
 };
+
+void cpu_step(Emulator8086 *emu){
+	uint32_t physical_addr = ((uint32_t)emu->cpu.cs << 4) + emu->cpu.ip;
+	uint8_t opcode = cpu_read_byte(emu, physical_addr);
+	switch (opcode){
+		case 0x90:
+			emu->cpu.ip++;
+			break;
+	
+		default:
+		emu->running = false;
+		break;
+	}
+}
