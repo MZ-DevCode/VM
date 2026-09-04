@@ -6,6 +6,10 @@
 
 #include "UI.h"
 
+extern "C"{
+#include "../include/cpu.h"
+}
+
 SDL_Window* window;
 SDL_Renderer* renderer;
 
